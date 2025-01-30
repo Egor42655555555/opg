@@ -1,0 +1,29 @@
+class gue:
+    print ("hi")
+
+    count_of_gue = 0
+    
+ def __init__(self, name, height = 170):
+     self.height = height
+     self.name = name
+     Gue.count_of_gue += 1
+     print ("hi, im gue")
+     
+     def grow_up(self, grow):
+         if self.height + grow < 220:
+         self.height += grow
+    
+    print(Gue.count_of_gue)
+    
+    gue1 = gue(name="gue")
+    print(gue1.height)
+    gue1.grow_up(50)
+    print(gue1.name)
+    
+    print(Gue.count_of_gue)
+    
+    gue2 = gue(name:"artem",height=170)
+    print(gue2.height = 170)
+    print(gue2.height)
+    
+    print(Gue.count_of_gue)
