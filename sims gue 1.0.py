@@ -10,7 +10,13 @@ class Human:
         self.money = 1000
         self.gladness = 50
         
-        
+        def shopinggue(self):
+            if self.car == none:
+                print("идем в магазин пешком")
+                else:
+                    self.car.drive(random.randint(a:10, b:40))
+                    self.money -= random.randint(a: 5, b:15)
+                    self.house.food += random.randint(a:5, b:20)
         
         def shoping(self):
             def __init__(self, grocery, building):
@@ -81,22 +87,53 @@ class Human:
                         
         
         def work(self):
-            pass
+            self.money += random.randint(a: 40, b: 50)
+            self.money += salary
+            print("сегодня работаем. заработали {salary}")
         
         def eat(self):
-            pass
+            self.gladness += 5
+            food = random.randint(a:1, b:5)
+            self.house.food - food > 0:
+                self.house.food -= food
+                print("мы чуть чуть поели")
+                else:
+                    print("поесть не удалось, холодильник пустой")
         
         def chill(self):
-            pass
+           print("сегодня отдыхаем")
+           self.money -= random.randint(a:5, b:10)
+           self.house.pollution += random.randint(a:1, b:5)
+           self.gladness += random.randint(a:5, b:10)
         
         def cleaning(self):
-            pass
+           percent = random.randint(a:1, b:5)
+           if percent == 5:
+               print("сегодня генеральная уборка")
+               self.house.pollution = 0
+               else:
+                   print("сегодня только повытирали пыль")
+                   self.house.pollution = max(0, self.house.pollution - random.randint(a:1, b:3))
         
         def info(self):
-            pass
+            print(f"деньги {self.money}")
+            print(f"настроение {self.gladness")
+                    
         
         def live(self):
-            pass
+            print(f"--- день№{day}---")
+            self.work()
+            self.eat()
+            self.chill()
+            self.shoping()
+            if day % 5 == 0:
+                self.cleaning()
+                
+                
+                
+                self.info()
+                
+            
         
         def is_alive(self):
             if self.money < 0:
@@ -113,11 +150,23 @@ class Human:
                 def drive(self, length):
                     rashod = length * 0.1
                     if self.fuel - rashod < 0:
-                        print("нету топлива")
+                        print("надо идти пешком")
                         else:
                             self.fuel -= rashod
                             self.state -= lenght * 0.01
                             print(f"мы поехали {length} км, потратили {rashod} л топлива")
+                            
+                            if self.money < 6000:
+                                self.car = false
+                                self.fuel = false
+                                self.state = false
+                                elif:
+                                    self.money > 6000:
+                                        self.money -= 5000
+                                        self.car = true
+                                        self.fuel = true
+                                        self.state = true
+                                        
                 
                 def add_fuel(self, fuel):
                     if self.fuel + fuel <= 60:
@@ -128,7 +177,7 @@ class Human:
                             print("бак полный")
                 
                 def __str__(self):
-                    pass
+                    return f"машина{self.model},топливо{self.fuel}л,износ{self.state}"
         
         
         
@@ -156,4 +205,15 @@ class Human:
                                 else:
                         
                         def __str__(self):
-                            print(f"запас еды - {self.food}, стпень загрязнения {self.pollution}")
+                            return(f"запас еды - {self.food}, стпень загрязнения {self.pollution}")
+                            
+                            
+                            
+                            
+                            
+                            
+                            human = human(name:"gue", job=Job(name:"cварщик", salary: 1000), house=House())
+                            for day in range(1, 365):
+                                if human.is_alive() == False:
+                                    break
+                                    human.live(day)
